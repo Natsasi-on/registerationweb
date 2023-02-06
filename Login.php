@@ -79,21 +79,6 @@ if (isset($_POST["btnSubmit"])) {
         {
             $password = hash("sha256", $password);
             $pdo = getPDO();
-            ///////////////////////////////////////////////////////
-            //            $sql = "SELECT StudentId, Name, Phone FROM Student WHERE StudentId = '$studentId' AND Password = '$password'";
-            //            $resultSet = $pdo->query($sql);
-            //            if ($resultSet) {
-            //                $row = $resultSet->fetch(PDO::FETCH_ASSOC); //Fetch one row from the prepared statement after execution.
-            //                if ($row) {
-            //                    $newUser = new User($row['StudentId'], $row['Name'], $row['Phone']);
-            //                    $_SESSION["studentNameLogin"] = $newUser->getName();
-            //                    $_SESSION["studentIdLogin"] = $newUser->getUserId();
-            //                    return $newUser;
-            //                } else {
-            //                    return null;
-            //                }
-            //            }
-            /////////////////////////////////////////////////////////////
 
             $sql = "SELECT StudentId, Name, Phone FROM Student WHERE StudentId = :userId AND Password = :password";
             //green canbe anything
